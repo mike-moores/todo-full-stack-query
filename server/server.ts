@@ -6,9 +6,12 @@ const server = express()
 server.use(express.json())
 
 if (process.env.NODE_ENV === 'production') {
-  server.use('/assets', express.static(Path.resolve(__dirname, '../assets')))
+  server.use(
+    '/assets',
+    express.static(Path.resolve(__dirname, '../dist/assets'))
+  )
   server.get('*', (req, res) => {
-    res.sendFile(Path.resolve(__dirname, '../index.html'))
+    res.sendFile(Path.resolve(__dirname, '../dist/index.html'))
   })
 }
 
