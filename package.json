@@ -56,7 +56,7 @@
     "prettier": "2.6.1",
     "react": "^18.0.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2",
+    "react-router-dom": "^6.11.2",
     "sass": "^1.50.1",
     "supertest": "^6.2.2",
     "typescript": "~4.8.4",
