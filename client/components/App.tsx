@@ -1,4 +1,4 @@
-import AddTodo from './AddTodo'
+import AddTodo from './AddTodo.tsx'
 
 function App() {
   return (

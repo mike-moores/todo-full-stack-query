@@ -1,27 +1,17 @@
 {
-  "ts-node": {
-    "transpileOnly": true,
-  },
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-    /* Projects */
-    /* Language and Environment */
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "jsx": "react-jsx" /* Specify what JSX code is generated. */,
-
-    /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
-
-    /* Interop Constraints */
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-
-    /* Type Checking */
-    "strict": true /* Enable all strict
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */,
+    "types": ["vite/client"],
+    "target": "es2020", 
+    "jsx": "react-jsx",
+    "module": "ES2020",
+    "moduleResolution": "NodeNext", 
     "noEmit": true,
+    "isolatedModules": true, 
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "allowImportingTsExtensions": true,
     "allowJs": true,
-
-  },
-  "include": ["server/**/*", "client/**/*"]
+    "skipLibCheck": true
+  }
 }
