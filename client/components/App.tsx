@@ -1,4 +1,5 @@
 import AddTodo from './AddTodo.tsx'
+import TaskList from './Tasks.tsx'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <AddTodo />
       </header>
       <section className="main"></section>
+      <TaskList />
       <footer className="footer"></footer>
     </>
   )
