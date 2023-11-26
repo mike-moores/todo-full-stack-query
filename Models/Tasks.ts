@@ -1,11 +1,11 @@
 export interface Task {
   id: number
-  task: string
+  details: string
   priority: string
   completed: boolean
 }
 
 export interface TaskData {
-  task: string
+  details: string
   completed: boolean
 }

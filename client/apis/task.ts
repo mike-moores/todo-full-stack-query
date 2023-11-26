@@ -3,7 +3,7 @@ import { Task, TaskData } from '../../Models/Tasks'
 
 export async function getAllTasks(): Promise<Task[]> {
   const response = await request.get('/api/v1/tasks')
-  return response.body.tasks
+  return response.body
 }
 
 export async function addTask(task: TaskData): Promise<Task> {

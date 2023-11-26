@@ -2,7 +2,7 @@ import db from './connection'
 import { Task, TaskData } from '../../Models/Tasks'
 
 export async function getAllTasks(): Promise<Task[]> {
-  const todo = await db('task').select('*')
+  const todo = await db('tasks').select('*')
   return todo
 }
 

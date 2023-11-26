@@ -7,8 +7,8 @@ const router = express.Router()
 //  GET /api/v1/tasks
 router.get('/', async (req, res) => {
   try {
-    const tasks = await db.getAllTasks
-    res.json({ tasks })
+    const tasks = await db.getAllTasks()
+    res.json(tasks)
   } catch (error) {
     res.sendStatus(500).json({
       error: `something went wrong in the tasks route: ${error}`,
