@@ -7,10 +7,10 @@ export async function getAllTasks(): Promise<Task[]> {
 }
 
 export async function addTask(task: TaskData): Promise<Task> {
-  const [newTask] = await db('task').insert(task).returning('*')
+  const [newTask] = await db('tasks').insert(task).returning('*')
   return newTask
 }
 
 export function deleteTask(id: number) {
-  return db('task').where('id', id).del()
+  return db('tasks').where('id', id).del()
 }

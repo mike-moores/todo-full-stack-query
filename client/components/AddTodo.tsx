@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { addTask } from '../apis/task'
 
 const initialFormData = {
-  task: '',
+  details: '',
   completed: false,
 }
 function AddTodo() {
@@ -44,7 +44,7 @@ function AddTodo() {
           className="new-todo"
           placeholder="What needs to be done?"
           onChange={handleChange}
-          name="task"
+          name="details"
           value={form.details}
         />
       </form>
