@@ -12,7 +12,7 @@ export function DeleteButton(props: Props) {
     mutationFn: deleteTask,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['tasks'] })
-    }
+    },
   })
 
   function handleClick() {
@@ -21,9 +21,7 @@ export function DeleteButton(props: Props) {
 
   return (
     <>
-      <button className="destroy" onClick={handleClick}>
-        X
-      </button>
+      <button className="destroy" onClick={handleClick}></button>
     </>
   )
 }

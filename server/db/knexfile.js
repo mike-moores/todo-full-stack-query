@@ -23,10 +23,10 @@ export default {
       filename: ':memory:',
     },
     migrations: {
-      directory: Path.join(__dirname, '/db/migrations'),
+      directory: Path.join(__dirname, './migrations'),
     },
     seeds: {
-      directory: Path.join(__dirname, '/db/seeds'),
+      directory: Path.join(__dirname, './seeds'),
     },
     pool: {
       afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
