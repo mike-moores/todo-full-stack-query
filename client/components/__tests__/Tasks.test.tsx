@@ -27,7 +27,7 @@ describe('Tasks', () => {
   })
 
   it('should render tasks ', async () => {
-    const scope = nock('http://localhost:3000')
+    const scope = nock('http://localhost')
       .get('/api/v1/tasks')
       .reply(200, mockTasks)
 
@@ -43,7 +43,7 @@ describe('Tasks', () => {
   })
 
   it('should render error message', async () => {
-    const scope = nock('http://localhost:3000').get('/api/v1/tasks').reply(500)
+    const scope = nock('http://localhost').get('/api/v1/tasks').reply(500)
 
     const screen = renderApp('/')
 

@@ -17,15 +17,11 @@ function TaskList() {
     return <p>Loading...</p>
   }
 
-  
-
-
   return (
     <>
       <header className="header">
         <h1>Task List</h1>
       </header>
-      <ul>{tasks.map((t,i) => (<li key={i}>{t.details} hello </li>))}</ul>
       <section className="main">
         <ul className="todo-list">
           {tasks.map((task, index) => (
