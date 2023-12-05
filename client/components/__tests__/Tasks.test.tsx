@@ -4,20 +4,22 @@ import { renderApp } from '../../test/setup'
 import nock from 'nock'
 import { waitForElementToBeRemoved } from '@testing-library/react/pure'
 
-const mockTasks = {
-  tasks: [
-    {
-      id: 30,
-      details: 'Vacuum Cat',
-      completed: false,
-    },
-    {
-      id: 32,
-      details: 'Mow the lawns',
-      completed: false,
-    },
-  ],
-}
+const scope = nock('http://localhost').get('/api/v1/tasks')
+
+const mockTasks = [
+  {
+    id: 30,
+    details: 'Vacuum Cat',
+    priority: 'Low',
+    completed: false,
+  },
+  {
+    id: 32,
+    details: 'Mow the lawns',
+    priority: 'Low',
+    completed: false,
+  },
+]
 
 describe('Tasks', () => {
   it('should render loading message', async () => {
