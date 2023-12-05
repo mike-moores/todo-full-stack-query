@@ -43,7 +43,7 @@ describe('/', () => {
 
     const response = await request(server).get('/api/v1/tasks')
 
-    expect(response.body.error).toBe(`something went wrong in the Task route:`)
+    expect(response.body.error).toBe(`something went wrong in the task route:`)
     expect(console.error).toHaveBeenCalledWith(
       new Error('SQLITE ERROR: db broke')
     )

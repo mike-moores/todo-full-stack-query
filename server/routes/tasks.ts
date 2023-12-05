@@ -10,8 +10,9 @@ router.get('/', async (req, res) => {
     const tasks = await db.getAllTasks()
     res.json(tasks)
   } catch (error) {
-    res.sendStatus(500).json({
-      error: `something went wrong in the tasks route:`,
+    console.error(error)
+    res.status(500).json({
+      error: `something went wrong in the task route:`,
     })
   }
 })
@@ -31,7 +32,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     console.error(error)
     res.status(500).json({
-      error: `something went wrong in the Task route:`,
+      error: `something went wrong in the task route:`,
     })
   }
 })
