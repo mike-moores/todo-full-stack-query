@@ -2,9 +2,7 @@
 import { describe, it, expect } from 'vitest'
 import { renderApp } from '../../test/setup'
 import nock from 'nock'
-import { waitForElementToBeRemoved } from '@testing-library/react/pure'
-
-const scope = nock('http://localhost').get('/api/v1/tasks')
+import { waitFor, waitForElementToBeRemoved } from '@testing-library/react/pure'
 
 const mockTasks = [
   {
@@ -23,7 +21,16 @@ const mockTasks = [
 
 describe('Tasks', () => {
   it('should render loading message', async () => {
-    // ... (previous code)
+    const scope = nock('http://localhost')
+      .get('/api/v1/tasks')
+      .reply(200, mockTasks)
+
+    const screen = renderApp('/')
+
+    const loading = await waitFor(() => screen.getByText('Loading...'))
+
+    expect(loading).toBeVisible()
+    expect(scope.isDone()).toBe(true)
   })
 
   it('should render tasks ', async () => {

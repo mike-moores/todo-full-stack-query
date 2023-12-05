@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
   } catch (error) {
     console.error(error)
     res.status(500).json({
-      error: `something went wrong in the Task route: ${error}`,
+      error: `something went wrong in the Task route: `,
     })
   }
 })
