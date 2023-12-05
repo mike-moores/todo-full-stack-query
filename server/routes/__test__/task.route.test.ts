@@ -33,4 +33,22 @@ describe('/', () => {
     expect(res.statusCode).toBe(200)
     expect(getAllTasks).toHaveBeenCalled()
   })
+
+  it('should return an error message when the db fails', async () => {
+    vi.mocked(getAllTasks).mockRejectedValue(
+      new Error('SQLITE ERROR: db broke')
+    )
+
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    const response = await request(server).get('/api/v1/tasks')
+
+    expect(response.body.error).toBe(`something went wrong in the Task route:`)
+    expect(console.error).toHaveBeenCalledWith(
+      new Error('SQLITE ERROR: db broke')
+    )
+
+    expect(response.body.error).not.toBe('SQLITE ERROR: db broke')
+    expect(response.statusCode).toBe(500)
+  })
 })
